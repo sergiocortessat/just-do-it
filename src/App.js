@@ -1,23 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import Basket from './Basket'
+import {useDispatch} from 'react-redux'
+import {updateProduct} from './Redux/Actions'
+import uniqid from 'uniqid';
+
+// Initialize random product names
+const items = ["Book", "Game", "TV", "Tablet", "Cellphone"]
+
+// function to generate random products
+const randomProducts = () =>  {
+let ranProduct = 
+  {
+    // id: Math.floor(Math.random()*Math.random()*100), 
+    id: uniqid(),
+    item: items[Math.floor(Math.random()*items.length)],
+    price: Math.floor(Math.random()*100)
+  }
+
+return ranProduct
+}
+
+
 
 function App() {
+  const dispatch = useDispatch()
+  function AddEntries() {
+   return  <button type="button" onClick={() => handleAddProduct()}>Add entry</button>
+  }
+  const handleAddProduct = () => {
+    dispatch(updateProduct(randomProducts()))
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <Basket />
+      </div>
+      <div>
+      <AddEntries />
+      </div>
     </div>
   );
 }
