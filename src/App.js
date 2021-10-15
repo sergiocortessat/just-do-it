@@ -14,7 +14,7 @@ let ranProduct =
     // id: Math.floor(Math.random()*Math.random()*100), 
     id: uniqid(),
     item: items[Math.floor(Math.random()*items.length)],
-    price: Math.floor(Math.random()*100)
+    price: Math.floor(Math.random()*100),
   }
 
 return ranProduct
@@ -32,10 +32,10 @@ function App() {
   }
   return (
     <div className="App">
-      <div>
+      <div className="basket">
         <Basket />
       </div>
-      <div>
+      <div className="add-entry">
       <AddEntries />
       </div>
     </div>

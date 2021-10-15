@@ -12,19 +12,37 @@ const Basket = ({products = [], onDelete = Function, totalSum= 0}) => {
     onDelete = (product) => {
         dispatch(deleteProduct(product));
     }
+
+    const headers = products[0] && Object.keys(products[0]);
+    const content = products[0] && Object.values(products);
+    console.log(content);
     return (
         <div>
-            {products && products.map(product => (
-                <div key={product.id}>
-                    <span>Item: {product.item}</span>
-                    <span>Price: {product.price}</span>
-                    <button onClick={() => onDelete(product)}>Delete entry</button>
-                </div>
+        <table>
+        <thead>
+          <tr>
+            {headers && headers.map((item, index) => (
+              <th key={index}>{item}</th>
             ))}
-            <div>
+          </tr>
+        </thead>
+          <tbody>
+            {content && content.map((item, index) => (
+              <tr key={index}>
+                {Object.values(item).map((item, index) => (
+                  <td key={index}>{item}</td>
+                ))}
+                <td><button onClick={() => onDelete(item)}>Delete</button></td>
+              </tr>
+            ))}
+          </tbody>
+      </table>
+            <div className="total-sum">
                 <p>Total sum of products: {totalSum}</p>
             </div>
         </div>
+
+        
     )
 }
 

@@ -1,13 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'IM Fell English SC', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(34,193,195);
+  font-size: 1.2rem;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  text-align: center;
+}
+
+.basket {
+  margin-top:30px;
+}
+
+.basket > div {
+  margin-bottom: 30px;
+}
+
+table {
+  margin: 0 auto;
+  font-size: 1.7rem;
+}
+
+.total-sum p {
+  font-size:2rem;
+}
+
+button {
+  font-size: 1.3rem;
+  border-radius: 38px;
+  background:black;
+  color: white;
+  width: 130px;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background: white;
+  color: black;
+}
+
+
