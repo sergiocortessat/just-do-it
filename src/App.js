@@ -5,7 +5,7 @@ import {updateProduct} from './Redux/Actions'
 import uniqid from 'uniqid';
 
 // Initialize random product names
-const items = ["Book", "Game", "TV", "Tablet", "Cellphone"]
+const items = ["Book", "Game", "TV", "Tablet", "Cellphone","Computer", "Camera", "Recorder", "Screen"]
 
 // function to generate random products
 const randomProducts = () =>  {
