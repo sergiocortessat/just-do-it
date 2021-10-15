@@ -15,7 +15,6 @@ const Basket = ({products = [], onDelete = Function, totalSum= 0}) => {
 
     const headers = products[0] && Object.keys(products[0]);
     const content = products[0] && Object.values(products);
-    console.log(content);
     return (
         <div>
         <table>
