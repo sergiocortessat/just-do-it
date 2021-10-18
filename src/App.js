@@ -4,6 +4,7 @@ import {useDispatch} from 'react-redux'
 import {updateProduct} from './Redux/Actions'
 import uniqid from 'uniqid';
 import Navbar from './LightDarkNavbar/NavBar'
+import Dark from './LightDarkNavbar/LighDarkComponent'
 
 // Initialize random product names
 const items = ["Book", "Game", "TV", "Tablet", "Cellphone","Computer", "Camera", "Recorder", "Screen"]
@@ -25,8 +26,9 @@ return ranProduct
 
 function App() {
   const dispatch = useDispatch()
+  const [darkMode] = Dark()
   function AddEntries() {
-   return  <button type="button" onClick={() => handleAddProduct()}>Add entry</button>
+   return  <button className={darkMode ? "dark-btn" : ''} type="button" onClick={() => handleAddProduct()}>Add entry</button>
   }
   const handleAddProduct = () => {
     dispatch(updateProduct(randomProducts()))
@@ -35,7 +37,7 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="basket">
-        <Basket />
+        <Basket darkMode={darkMode}/>
       </div>
       <div className="add-entry">
       <AddEntries />

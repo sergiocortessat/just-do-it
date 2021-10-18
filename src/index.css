@@ -15,6 +15,7 @@ code {
 
 .App {
   text-align: center;
+  box-sizing: border-box;
 }
 
 .basket {
@@ -37,16 +38,31 @@ table {
 button {
   font-size: 1.3rem;
   border-radius: 38px;
-  background:black;
-  color: white;
+  background:rgb(171, 238, 83);
+  color: black;
   width: 130px;
   padding: 10px;
   transition: all 0.3s ease-in-out;
 }
 
 button:hover {
-  background: white;
+  background: rgb(10, 124, 77);
   color: black;
 }
 
+/* Darkmode */
 
+.dark-mode {
+  background: rgb(12, 45, 46) !important;
+  color: white !important;
+}
+
+.button-dark-mode {
+  background: black !important;
+  color: white !important;
+}
+
+.button-dark-mode:hover {
+  background: rgb(2, 75, 57) !important;
+  color: white !important;
+}

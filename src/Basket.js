@@ -3,9 +3,12 @@ import {useSelector, useDispatch} from 'react-redux'
 import {deleteProduct} from './Redux/Actions'
 
 
-const Basket = ({products = [], onDelete = Function, totalSum= 0}) => {
+
+const Basket = ({products = [], onDelete = Function, totalSum= 0}, props) => {
     const items = useSelector((state) => state.product);
     const dispatch = useDispatch();
+
+
     
     products = items.products;
     totalSum = items.totalSum;
@@ -42,7 +45,7 @@ const Basket = ({products = [], onDelete = Function, totalSum= 0}) => {
                 {Object.values(item).map((item, index) => (
                   <td key={index}>{item}</td>
                 ))}
-                <td><button onClick={() => onDelete(item)}>Delete</button></td>
+                <td><button className={props.darkMode ? '' : 'dark-btn'} onClick={() => onDelete(item)}>Delete</button></td>
               </tr>
             ))}
           </tbody>
