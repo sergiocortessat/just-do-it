@@ -11,7 +11,7 @@ const NavBar = () => {
             <div className="toggle">
             <p>{darkMode? 'Swith to Light' : 'Swtich to Dark'}</p>
             <label className="switch">
-                <input type="checkbox" onClick={() => toggleDarkMode()}/>
+                <input type="checkbox" onClick={() => toggleDarkMode()} checked={darkMode}/>
                 <span className ="slider round"></span>
             </label>
             </div>
