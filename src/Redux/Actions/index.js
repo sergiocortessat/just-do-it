@@ -8,5 +8,10 @@ export const deleteProduct = (id) => ({
     payload: id,
   });
 
+export const dark =(condition) => ({
+  type: 'DARK-MODE',
+  payload: condition
+});
+
 
 

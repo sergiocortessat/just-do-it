@@ -1,10 +1,10 @@
 import './App.css';
 import Basket from './Basket'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {updateProduct} from './Redux/Actions'
 import uniqid from 'uniqid';
 import Navbar from './LightDarkNavbar/NavBar'
-import Dark from './LightDarkNavbar/LighDarkComponent'
+import { useEffect, useState } from 'react';
 
 // Initialize random product names
 const items = ["Book", "Game", "TV", "Tablet", "Cellphone","Computer", "Camera", "Recorder", "Screen"]
@@ -25,20 +25,25 @@ return ranProduct
 
 
 function App() {
+
   const dispatch = useDispatch()
-  const [darkMode] = Dark()
+  const {dark} = useSelector((state) => state.product)
+  console.log(dark);
+  useEffect(() => {
+  }, [dark])
+  // const darkMode = Dark()
   function AddEntries() {
-   return  <button className='button' type="button" onClick={() => handleAddProduct()}>Add entry</button>
+   return  <button className={!dark ? 'dark-button' : ''} type="button" onClick={() => handleAddProduct()}>Add entry</button>
   }
   const handleAddProduct = () => {
     dispatch(updateProduct(randomProducts()))
   }
-  console.log(document.querySelector('.nav-dark-mode'));
+  console.log(dark);
   return (
     <div className="App">
       <Navbar />
       <div className="basket">
-        <Basket darkMode={darkMode}/>
+        <Basket />
       </div>
       <div className="add-entry">
       <AddEntries />

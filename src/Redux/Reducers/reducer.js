@@ -2,6 +2,7 @@
 const initialState = {
     products: [],
     totalSum: 0,
+    dark: localStorage.getItem('theme') === 'dark' ? true : false,
 };
 
 export const productReducer = (state = initialState, action) => {
@@ -20,6 +21,12 @@ export const productReducer = (state = initialState, action) => {
                 products: state.products.filter(product => product.id !== action.payload.id),
                 totalSum: state.totalSum - action.payload.price
             };
+        
+            case 'DARK-MODE':
+                return {
+                    ...state,
+                    dark: !state.dark
+                };
         default:
             return state;
         }
