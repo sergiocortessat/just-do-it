@@ -6,13 +6,16 @@ export default function LightDarkToggle() {
     useEffect(() => {
         if (darkMode) {
             document.body.classList.add('dark-mode');
-            let body = document.querySelector('body');
-            console.log(body);
             // let nav = document.querySelector('navbar');
             // nav.classList.add('nav-dark-mode');
+            document.querySelector('.button').classList.add('dark-button');
+            // document.querySelector('#button').classList.add('dark-button');
             localStorage.setItem('theme', 'dark')
         } else {
             document.body.classList.remove('dark-mode');
+            document.querySelector('.button').classList.remove('dark-button');
+            // document.querySelector('#button').classList.remove('dark-button');
+            // document.querySelector('button').classList.remove('dark-button');
             localStorage.setItem('theme', 'light')
         }
     }

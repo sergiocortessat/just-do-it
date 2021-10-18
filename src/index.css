@@ -57,12 +57,12 @@ button:hover {
   color: white !important;
 }
 
-.button-dark-mode {
+.dark-button {
   background: black !important;
   color: white !important;
 }
 
-.button-dark-mode:hover {
+.dark-button:hover {
   background: rgb(2, 75, 57) !important;
   color: white !important;
 }

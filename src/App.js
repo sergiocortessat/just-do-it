@@ -28,11 +28,12 @@ function App() {
   const dispatch = useDispatch()
   const [darkMode] = Dark()
   function AddEntries() {
-   return  <button className={darkMode ? "dark-btn" : ''} type="button" onClick={() => handleAddProduct()}>Add entry</button>
+   return  <button className='button' type="button" onClick={() => handleAddProduct()}>Add entry</button>
   }
   const handleAddProduct = () => {
     dispatch(updateProduct(randomProducts()))
   }
+  console.log(document.querySelector('.nav-dark-mode'));
   return (
     <div className="App">
       <Navbar />

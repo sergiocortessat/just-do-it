@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux'
 import {deleteProduct} from './Redux/Actions'
 
@@ -28,7 +28,6 @@ const Basket = ({products = [], onDelete = Function, totalSum= 0}, props) => {
         }
     const headers = products[0] && Object.keys(products[0]);
     const content = products[0] && Object.values(products);
-    console.log(products);
     return (
         <div>
         <table>
@@ -45,7 +44,7 @@ const Basket = ({products = [], onDelete = Function, totalSum= 0}, props) => {
                 {Object.values(item).map((item, index) => (
                   <td key={index}>{item}</td>
                 ))}
-                <td><button className={props.darkMode ? '' : 'dark-btn'} onClick={() => onDelete(item)}>Delete</button></td>
+                <td><button onClick={() => onDelete(item)}>Delete</button></td>
               </tr>
             ))}
           </tbody>
