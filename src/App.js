@@ -3,6 +3,7 @@ import Basket from './Basket'
 import {useDispatch} from 'react-redux'
 import {updateProduct} from './Redux/Actions'
 import uniqid from 'uniqid';
+import Navbar from './LightDarkNavbar/NavBar'
 
 // Initialize random product names
 const items = ["Book", "Game", "TV", "Tablet", "Cellphone","Computer", "Camera", "Recorder", "Screen"]
@@ -32,6 +33,7 @@ function App() {
   }
   return (
     <div className="App">
+      <Navbar />
       <div className="basket">
         <Basket />
       </div>
